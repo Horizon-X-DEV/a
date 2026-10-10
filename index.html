@@ -4,185 +4,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="description" content="HorizonX — Creative FullStack Web Developer. Portofolio, keahlian, dan kontak.">
+    <meta name="theme-color" content="#212529">
+    <title>HorizonX — Creative FullStack Web Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>HorizonX-Portofolio</title>
+
+    <!-- Menandai bahwa JS aktif. Jika JS gagal dimuat, konten tetap terlihat. -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
 
-    <div class="navbar">
-        <h2>HorizonX</h2>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-        <button class="hire-btn">Hire Me</button>
-    </div>
+    <a class="skip-link" href="#home">Lewati ke konten utama</a>
 
-    <div class="main">
-        <h4>Hi, I Am <span>HorizonX</span> </h4>
-        <p class="title">Creative FullStack Web Developer</p>
-        <p class="subtitle">I'm Design And Code Beautifully Simple Things And I Love What I Doing!</p>
-        <img src="logo.png">
-    </div>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar" id="navbar">
+        <nav class="nav-inner" aria-label="Navigasi utama">
+            <a href="#home" class="brand">HorizonX</a>
 
-    <div class="guarantee">
-        <div class="item">
-            <div class="icon">
-                <i class='bx bx-check-shield'></i>
-            </div>
-            <div class="info">
-                <h3>+5</h3>
-                <p>Years Of Experiences</p>
-            </div>
-            <i class='bx bx-chevron-right'></i>
-        </div>
-        <div class="item">
-            <div class="icon">
-                <i class='bx bx-check-circle'></i>
-            </div>
-            <div class="info">
-                <h3>+100</h3>
-                <p>Completed Projects</p>
-            </div>
-            <i class='bx bx-chevron-right'></i>
-        </div>
-        <div class="item">
-            <div class="icon">
-                <i class='bx bx-laugh'></i>
-            </div>
-            <div class="info">
-                <h3>+50</h3>
-                <p>Happy Clients</p>
-            </div>
-            <i class='bx bx-chevron-right'></i>
-        </div>
-    </div>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu navigasi"
+                aria-expanded="false" aria-controls="primaryNav">
+                <i class='bx bx-menu' aria-hidden="true"></i>
+            </button>
 
-    <h5 class="seprator">Who I Am</h5>
+            <ul class="nav-links" id="primaryNav">
+                <li><a class="nav-link" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#skills">Skills</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-cta-mobile">
+                    <a class="hire-btn"
+                        href="https://wa.me/6281919772045?text=Halo%20HorizonX%2C%20saya%20tertarik%20untuk%20menghubungi%20Anda."
+                        target="_blank" rel="noopener noreferrer">Hire Me</a>
+                </li>
+            </ul>
 
-    <div class="about">
-        <div class="info">
-            <h3>About Me</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque eveniet vitae fugit accusamus, cupiditate
-                labore quae officia sunt enim consectetur eligendi sit mollitia iste doloribus libero odio, quidem optio
-                autem!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque eveniet vitae fugit accusamus,
-                cupiditate labore quae officia sunt enim consectetur eligendi sit mollitia iste doloribus libero odio,
-                quidem optio autem!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque eveniet vitae fugit accusamus,
-                cupiditate labore quae officia sunt enim consectetur eligendi sit mollitia iste doloribus libero odio,
-                quidem optio autem!
-            </p>
-            <button class="hire-btn">Hire Me</button>
-        </div>
-    </div>
+            <a class="hire-btn nav-cta"
+                href="https://wa.me/6281919772045?text=Halo%20HorizonX%2C%20saya%20tertarik%20untuk%20menghubungi%20Anda."
+                target="_blank" rel="noopener noreferrer">Hire Me</a>
+        </nav>
+    </header>
 
-    <h5 class="seprator">My Skills</h5>
+    <main>
 
-    <div class="skills">
-        <div class="left">
-            <div class="info">
-                <h3>What My Programming Skills Included?</h3>
+        <!-- ================= HERO ================= -->
+        <section class="main" id="home">
+            <h4>Hi, I Am <span>HorizonX</span></h4>
+            <p class="title">Creative FullStack Web Developer</p>
+            <p class="subtitle">I'm Design And Code Beautifully Simple Things And I Love What I Doing!</p>
+            <img src="logo.png" alt="Logo HorizonX" width="200" height="200">
+        </section>
+
+        <!-- ================= STATISTIK ================= -->
+        <section class="guarantee" aria-label="Statistik singkat">
+            <div class="item">
+                <div class="icon" aria-hidden="true">
+                    <i class='bx bx-check-shield'></i>
+                </div>
+                <div class="info">
+                    <h3>+5</h3>
+                    <p>Years Of Experiences</p>
+                </div>
+                <i class='bx bx-chevron-right' aria-hidden="true"></i>
+            </div>
+
+            <div class="item">
+                <div class="icon" aria-hidden="true">
+                    <i class='bx bx-check-circle'></i>
+                </div>
+                <div class="info">
+                    <h3>+100</h3>
+                    <p>Completed Projects</p>
+                </div>
+                <i class='bx bx-chevron-right' aria-hidden="true"></i>
+            </div>
+
+            <div class="item">
+                <div class="icon" aria-hidden="true">
+                    <i class='bx bx-laugh'></i>
+                </div>
+                <div class="info">
+                    <h3>+50</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <i class='bx bx-chevron-right' aria-hidden="true"></i>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <h2 class="seprator">Who I Am</h2>
+
+        <section class="about" id="about">
+            <div class="info reveal">
+                <h3>About Me</h3>
                 <p>
-                    I develop simple, intuitive and responsive user interface that helps users get things done with less
-                    effort and time with those technologies.
+                    I'm HorizonX — a creative full-stack web developer focused on building clean, fast, and
+                    responsive interfaces. I enjoy turning ideas into working products: from structuring the
+                    markup and styling the layout, all the way to wiring up the logic behind it.
                 </p>
+                <p>
+                    I care about detail, accessibility, and code that stays easy to maintain. I'm always open
+                    to new projects, collaborations, and challenges. If you have something in mind, let's talk
+                    about it.
+                </p>
+
+                <div class="btn-row">
+                    <a class="hire-btn"
+                        href="https://wa.me/6281919772045?text=Halo%20HorizonX%2C%20saya%20tertarik%20untuk%20menghubungi%20Anda."
+                        target="_blank" rel="noopener noreferrer">Hire Me</a>
+                    <a class="email-btn" href="mailto:horizonx.developer@gmail.com"
+                        aria-label="Kirim email ke HorizonX">
+                        <i class='bx bx-envelope' aria-hidden="true"></i> Email Me
+                    </a>
+                </div>
             </div>
-            <button class="hire-btn">Hire Me</button>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <h2 class="seprator">My Skills</h2>
+
+        <section class="skills" id="skills">
+            <div class="left reveal">
+                <div class="info">
+                    <h3>What My Programming Skills Included?</h3>
+                    <p>
+                        I develop simple, intuitive and responsive user interface that helps users get things
+                        done with less effort and time with those technologies.
+                    </p>
+                </div>
+
+                <div class="btn-row">
+                    <a class="hire-btn"
+                        href="https://wa.me/6281919772045?text=Halo%20HorizonX%2C%20saya%20tertarik%20untuk%20menghubungi%20Anda."
+                        target="_blank" rel="noopener noreferrer">Hire Me</a>
+                    <a class="email-btn" href="mailto:horizonx.developer@gmail.com"
+                        aria-label="Kirim email ke HorizonX">
+                        <i class='bx bx-envelope' aria-hidden="true"></i> Email Me
+                    </a>
+                </div>
+            </div>
+
+            <ul class="right reveal" role="list" aria-label="Teknologi yang saya gunakan">
+                <li class="item" tabindex="0"><i class='bx bxl-html5' aria-hidden="true"></i><span>HTML5</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-css3' aria-hidden="true"></i><span>CSS3</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-javascript' aria-hidden="true"></i><span>JavaScript</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-typescript' aria-hidden="true"></i><span>TypeScript</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-git' aria-hidden="true"></i><span>Git</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-bootstrap' aria-hidden="true"></i><span>Bootstrap</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-php' aria-hidden="true"></i><span>PHP</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-sass' aria-hidden="true"></i><span>Sass</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-tailwind-css' aria-hidden="true"></i><span>Tailwind</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-mongodb' aria-hidden="true"></i><span>MongoDB</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-graphql' aria-hidden="true"></i><span>GraphQL</span></li>
+                <li class="item" tabindex="0"><i class='bx bxl-jquery' aria-hidden="true"></i><span>jQuery</span></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact">
+        <div class="footer-inner">
+
+            <div class="start reveal">
+                <div class="start-text">
+                    <h3>Start a project</h3>
+                    <p>Interested in working together? We should queue up a chat. I'll buy the coffee.</p>
+                </div>
+                <a class="start-btn"
+                    href="https://wa.me/6281919772045?text=Halo%20HorizonX%2C%20saya%20tertarik%20untuk%20menghubungi%20Anda."
+                    target="_blank" rel="noopener noreferrer">Let's do this</a>
+            </div>
+
+            <div class="cols">
+
+                <div class="about-col">
+                    <h3>HorizonX</h3>
+                    <p>Creative FullStack Developer</p>
+                    <p class="footer-email">
+                        <i class='bx bx-envelope' aria-hidden="true"></i>
+                        <a href="mailto:horizonx.developer@gmail.com">horizonx.developer@gmail.com</a>
+                    </p>
+                </div>
+
+                <nav class="links-col" aria-label="Tautan berguna">
+                    <h4>Useful Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
+                <nav class="links-col" aria-label="Media sosial dan kontak">
+                    <h4>Social Media</h4>
+                    <a href="https://www.instagram.com/horizon_xcorp?utm_source=ig_web_button_share_sheet&amp;xtok=ZDNlZDc0MzIxNw=="
+                        target="_blank" rel="noopener noreferrer">
+                        <i class='bx bxl-instagram' aria-hidden="true"></i> Instagram
+                    </a>
+                    <a href="https://github.com/Horizon-X-DEV" target="_blank" rel="noopener noreferrer">
+                        <i class='bx bxl-github' aria-hidden="true"></i> GitHub
+                    </a>
+                    <a href="https://wa.me/6281919772045?text=Halo%20HorizonX%2C%20saya%20tertarik%20untuk%20menghubungi%20Anda."
+                        target="_blank" rel="noopener noreferrer">
+                        <i class='bx bxl-whatsapp' aria-hidden="true"></i> WhatsApp
+                    </a>
+                    <a href="mailto:horizonx.developer@gmail.com">
+                        <i class='bx bx-envelope' aria-hidden="true"></i> Email
+                    </a>
+                </nav>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2025</span> HorizonX. All rights reserved.</p>
+            </div>
+
         </div>
-
-        <div class="right">
-            <div class="item">
-                <i class='bx bxl-html5'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-css3'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-typescript'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-git'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-bootstrap'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-php'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-sass'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-tailwind-css'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-mongodb'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-graphql'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-jquery'></i>
-            </div>
-            <div class="item">
-                <i class='bx bxl-angular'></i>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        <div class="start">
-            <h3>Start a project</h3>
-            <p>Interested in working together? We should queue up a chat. I’ll buy the coffee.</p>
-            <button>Let's do this</button>
-        </div>
-
-        <div class="cols">
-            <div class="about-col">
-                <h3>HorizonX</h3>
-                <p>Creative FullStack Developer</p>
-            </div>
-
-            <div class="links-col">
-                <h4>Useful Links</h4>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Skills</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Contact</a>
-            </div>
-
-            <div class="links-col">
-                <h4>Social Media</h4>
-                <a href="#">Instagram</a>
-                <a href="#">Linkedin</a>
-                <a href="#">Dribble</a>
-                <a href="#">Youtube</a>
-                <a href="#">Github</a>
-            </div>
-
-            <div class="news-col">
-                <h4>NewsLetter</h4>
-                <p>Enter your email and get notified about news, of.</p>
-
-                <form>
-                    <input type="email" placeholder="Your email address">
-                    <button><i class='bx bxl-telegram'></i></button>
-                </form>
-
-            </div>
-
-        </div>
-
     </footer>
 
+    <button class="to-top" id="toTop" type="button" aria-label="Kembali ke atas">
+        <i class='bx bx-up-arrow-alt' aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>
