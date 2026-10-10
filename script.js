@@ -12,7 +12,7 @@
     }
 
     /* =====================================================
-       1. NAVBAR — sticky state, mobile menu
+       1. NAVBAR — sticky state + mobile menu
        ===================================================== */
     var navbar = document.getElementById('navbar');
     var navToggle = document.getElementById('navToggle');
@@ -118,20 +118,20 @@
                 window.history.pushState(null, '', hash);
             }
 
-            /* Pindahkan fokus agar pengguna keyboard / screen reader mengikuti */
+            /* Agar fokus mengikuti untuk pengguna keyboard / screen reader */
             if (!target.hasAttribute('tabindex')) {
                 target.setAttribute('tabindex', '-1');
             }
             try {
                 target.focus({ preventScroll: true });
             } catch (err) {
-                /* Browser lama mengabaikan opsi; tidak masalah. */
+                /* Browser lama mengabaikan opsi; abaikan. */
             }
         });
     });
 
     /* =====================================================
-       3. ANIMASI SAAT SCROLL (Intersection Observer)
+       3. ANIMASI REVEAL saat masuk viewport
        ===================================================== */
     var revealElements = document.querySelectorAll('.reveal');
 
@@ -162,7 +162,7 @@
     }
 
     /* =====================================================
-       4. MENU AKTIF + TOMBOL KEMBALI KE ATAS (scroll handler)
+       4. SCROLL HANDLER — aktif navbar + tombol ke atas
        ===================================================== */
     var toTop = document.getElementById('toTop');
     var sectionEntries = [];
@@ -247,7 +247,7 @@
     }
 
     /* =====================================================
-       6. TAHUN FOOTER
+       6. TAHUN FOOTER OTOMATIS
        ===================================================== */
     var yearEl = document.getElementById('year');
     if (yearEl) {
