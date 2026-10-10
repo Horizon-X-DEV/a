@@ -1,5 +1,6 @@
 /* =========================================================
    HorizonX — style.css
+   Tema gelap, aksen kuning keemasan, font Poppins.
    ========================================================= */
 
 :root {
@@ -18,7 +19,7 @@
 
     --radius: 12px;
     --nav-h: 72px;
-    --maxw: 1180px;
+    --maxw: 1160px;
     --pad: clamp(16px, 4vw, 50px);
 }
 
@@ -171,7 +172,7 @@ button {
     display: none;
 }
 
-/* ---------- Tombol utama ---------- */
+/* ---------- Tombol utama (kuning) ---------- */
 .hire-btn {
     display: inline-flex;
     align-items: center;
@@ -182,21 +183,59 @@ button {
     color: var(--ink);
     font-size: 15px;
     font-weight: 600;
-    border: none;
+    border: 1.5px solid var(--accent);
     border-radius: 8px;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
-    transition: background-color .25s ease, transform .2s ease, box-shadow .25s ease;
+    transition: background-color .25s ease, transform .2s ease, box-shadow .25s ease, color .25s ease;
 }
 
 .hire-btn:hover {
     background: var(--accent-hover);
+    border-color: var(--accent-hover);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(255, 183, 66, .22);
 }
 
 .hire-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ---------- Tombol sekunder (outline) ---------- */
+.email-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 10px 24px;
+    background: transparent;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 1.5px solid var(--accent);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .25s ease, color .25s ease, transform .2s ease, box-shadow .25s ease;
+}
+
+.email-btn i {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.email-btn:hover {
+    background: var(--accent);
+    color: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 183, 66, .22);
+}
+
+.email-btn:active {
     transform: translateY(0);
     box-shadow: none;
 }
@@ -238,24 +277,30 @@ button {
     padding: clamp(56px, 9vw, 100px) var(--pad) clamp(40px, 6vw, 70px);
 }
 
-.main h4 {
-    font-size: clamp(1.25rem, 3.6vw, 2rem);
+.main .hero-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     font-weight: 600;
+}
+
+.main .hero-greet {
+    font-size: clamp(1.25rem, 3.6vw, 2rem);
     color: var(--text);
 }
 
-.main h4 span {
+.main .hero-name {
     color: var(--accent);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
 }
 
-.main p.title {
-    max-width: 20ch;
-    margin-top: 10px;
+.main .hero-title {
+    display: block;
+    max-width: 22ch;
+    margin: 0 auto;
     font-size: clamp(1.75rem, 5.6vw, 2.75rem);
-    font-weight: 600;
     line-height: 1.2;
     color: var(--text);
 }
@@ -265,6 +310,14 @@ button {
     margin-top: 18px;
     font-size: clamp(.9rem, 2.2vw, 1rem);
     color: var(--muted);
+}
+
+.main .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
 }
 
 .main img {
@@ -340,19 +393,19 @@ button {
     color: var(--text);
 }
 
-.guarantee .item > i.bx-chevron-right {
+.guarantee .item>i.bx-chevron-right {
     flex: 0 0 auto;
     font-size: 24px;
     color: var(--muted-2);
     transition: color .3s ease;
 }
 
-.guarantee .item:hover > i.bx-chevron-right {
+.guarantee .item:hover>i.bx-chevron-right {
     color: var(--accent);
 }
 
 /* =========================================================
-   SEPARATOR
+   SEPARATOR JUDUL
    ========================================================= */
 .seprator {
     display: block;
@@ -385,17 +438,13 @@ button {
 }
 
 .about .info p {
-    max-width: 80ch;
+    max-width: 78ch;
     font-size: clamp(.875rem, 2vw, .95rem);
     color: var(--muted);
 }
 
-.about .info p + p {
+.about .info p+p {
     margin-top: 12px;
-}
-
-.about .info .hire-btn {
-    margin-top: 28px;
 }
 
 /* =========================================================
@@ -422,10 +471,6 @@ button {
     max-width: 60ch;
     font-size: clamp(.875rem, 2vw, .95rem);
     color: var(--muted);
-}
-
-.skills .left .hire-btn {
-    margin-top: 28px;
 }
 
 .skills .right {
@@ -477,6 +522,16 @@ button {
 .skills .right .item:hover span,
 .skills .right .item:focus-visible span {
     color: var(--muted);
+}
+
+/* =========================================================
+   BARIS TOMBOL GANDA
+   ========================================================= */
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
 }
 
 /* =========================================================
@@ -556,7 +611,7 @@ footer {
 /* Kolom footer */
 .cols {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1.6fr 1fr 1fr;
     gap: clamp(28px, 5vw, 48px);
     padding-bottom: 40px;
 }
@@ -567,10 +622,38 @@ footer {
     color: var(--accent);
 }
 
-.cols .about-col p {
+.cols .about-col>p {
     max-width: 36ch;
     font-size: .875rem;
     color: var(--muted-2);
+}
+
+.cols .about-col .footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: .85rem;
+    color: var(--muted-2);
+    word-break: break-word;
+}
+
+.cols .about-col .footer-contact i {
+    font-size: 18px;
+    color: var(--accent);
+    flex: 0 0 auto;
+}
+
+.cols .about-col .footer-contact a {
+    color: var(--muted-2);
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+.cols .about-col .footer-contact a:hover,
+.cols .about-col .footer-contact a:focus-visible {
+    color: var(--accent);
+    text-decoration: underline;
 }
 
 .cols h4 {
@@ -650,7 +733,7 @@ footer {
 }
 
 /* =========================================================
-   ANIMASI SCROLL (hanya aktif jika JS berjalan)
+   ANIMASI SCROLL (aktif hanya jika JS berjalan)
    ========================================================= */
 .js .reveal {
     opacity: 0;
@@ -712,13 +795,13 @@ footer {
         grid-column: 1 / -1;
     }
 
-    .cols .about-col p {
+    .cols .about-col>p {
         max-width: 60ch;
     }
 }
 
 /* =========================================================
-   RESPONSIVE — 780px
+   RESPONSIVE — 780px (mobile nav)
    ========================================================= */
 @media screen and (max-width: 780px) {
     :root {
@@ -789,18 +872,9 @@ footer {
         border-bottom: none;
     }
 
-    .nav-links .nav-cta-mobile .hire-btn:hover {
-        color: var(--ink);
-    }
-
     /* Layout */
     .guarantee {
         grid-template-columns: minmax(0, 1fr);
-    }
-
-    .about .info .hire-btn,
-    .skills .left .hire-btn {
-        margin-top: 24px;
     }
 
     .cols {
@@ -849,8 +923,29 @@ footer {
    RESPONSIVE — 480px
    ========================================================= */
 @media screen and (max-width: 480px) {
-    .main p.title {
-        font-size: clamp(1.35rem, 7.5vw, 1.7rem);
+    .main .hero-title {
+        font-size: clamp(1.4rem, 7.5vw, 1.75rem);
+    }
+
+    .main .hero-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .main .hero-actions .hire-btn,
+    .main .hero-actions .email-btn {
+        width: 100%;
+    }
+
+    .btn-row {
+        gap: 10px;
+    }
+
+    .btn-row .hire-btn,
+    .btn-row .email-btn {
+        flex: 1 1 auto;
+        padding: 10px 16px;
+        font-size: 14px;
     }
 
     .guarantee .item {
@@ -868,7 +963,7 @@ footer {
         font-size: 22px;
     }
 
-    .guarantee .item > i.bx-chevron-right {
+    .guarantee .item>i.bx-chevron-right {
         display: none;
     }
 
@@ -900,97 +995,5 @@ footer {
         width: 44px;
         height: 44px;
         font-size: 24px;
-    }
-}
-/* =========================================================
-   TOMBOL SEKUNDER (EMAIL)
-   ========================================================= */
-.btn-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 28px;
-}
-
-.btn-row .hire-btn {
-    margin-top: 0; /* override margin lama di .about/.skills */
-}
-
-.email-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 44px;
-    padding: 10px 24px;
-    background: transparent;
-    color: var(--accent);
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-    border: 1.5px solid var(--accent);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color .25s ease, color .25s ease, transform .2s ease, box-shadow .25s ease;
-}
-
-.email-btn i {
-    font-size: 18px;
-    line-height: 1;
-}
-
-.email-btn:hover {
-    background: var(--accent);
-    color: var(--ink);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 183, 66, .22);
-}
-
-.email-btn:active {
-    transform: translateY(0);
-    box-shadow: none;
-}
-
-/* Email di kolom about footer */
-.footer-email {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 14px;
-    font-size: .85rem;
-    color: var(--muted-2);
-    word-break: break-word;
-}
-
-.footer-email i {
-    font-size: 18px;
-    color: var(--accent);
-    flex: 0 0 auto;
-}
-
-.footer-email a {
-    color: var(--muted-2);
-    text-decoration: none;
-    transition: color .25s ease;
-}
-
-.footer-email a:hover,
-.footer-email a:focus-visible {
-    color: var(--accent);
-    text-decoration: underline;
-}
-
-/* Penyesuaian responsif kecil untuk tombol email */
-@media screen and (max-width: 480px) {
-    .btn-row {
-        gap: 10px;
-    }
-
-    .btn-row .hire-btn,
-    .btn-row .email-btn {
-        flex: 1 1 auto;
-        padding: 10px 16px;
-        font-size: 14px;
     }
 }
